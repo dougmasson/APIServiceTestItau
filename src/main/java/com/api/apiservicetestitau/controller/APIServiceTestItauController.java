@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.StoredProcedureQuery;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,13 +16,14 @@ import com.api.apiservicetestitau.model.ResultTotalPostagemPorHora;
 
 @RestController
 @RequestMapping("/testeItau")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class APIServiceTestItauController {
 
 	@PersistenceContext
 	EntityManager em;
 	
-	@RequestMapping("/ExibirUsuarioMaioresSeguidos")
-	public ResultExibirUsuarioMaioresSeguidos[] ExibirUsuarioMaioresSeguidos() {
+	@RequestMapping("/ExibirUsuarioMaioresSeguidores")	
+	public ResultExibirUsuarioMaioresSeguidos[] exibirUsuarioMaioresSeguidores() {
 
 		StoredProcedureQuery pr_ExibirUsuarioMaioresSeguidos = em.createNamedStoredProcedureQuery("ExibirUsuarioComMaioresNumeroSeguidos");
 
@@ -31,7 +33,7 @@ public class APIServiceTestItauController {
 	}
 
 	@RequestMapping("/TotalPostagemPorHora")
-	public ResultTotalPostagemPorHora[] TotalPostagemPorHora() {
+	public ResultTotalPostagemPorHora[] totalPostagemPorHora() {
 
 		StoredProcedureQuery pr_ExibirUsuarioMaioresSeguidos = em.createNamedStoredProcedureQuery("TotalPostagemAgrupadaPorHora");
 
@@ -41,7 +43,7 @@ public class APIServiceTestItauController {
 	}
 	
 	@RequestMapping("/TotalPostagemHashTagPorIdioma")
-	public ResultTotalPostagemHashTagPorIdioma[] TotalPostagemHashTagPorIdioma() {
+	public ResultTotalPostagemHashTagPorIdioma[] totalPostagemHashTagPorIdioma() {
 
 		StoredProcedureQuery pr_ExibirUsuarioMaioresSeguidos = em.createNamedStoredProcedureQuery("TotalPostagemHashTagPorIdiomaPais");
 

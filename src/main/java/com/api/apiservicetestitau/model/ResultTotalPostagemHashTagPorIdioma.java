@@ -21,6 +21,7 @@ import javax.persistence.Table;
 public class ResultTotalPostagemHashTagPorIdioma implements Serializable {
 	private static final long serialVersionUID = -2166815681205844559L;
 
+	@Id	
 	@Column(name="dataexecucao")
 	private Date DataExecucao;
 	
@@ -28,9 +29,11 @@ public class ResultTotalPostagemHashTagPorIdioma implements Serializable {
 	@Column(name="descricao")
 	private String Descricao;
 	
+	@Id
 	@Column(name="idioma")
 	private String Idioma;
 	
+	@Id
 	@Column(name="total")
 	private int Total;
 		

@@ -21,29 +21,27 @@ import javax.persistence.Table;
 public class ResultTotalPostagemPorHora implements Serializable {
 	
 	private static final long serialVersionUID = -1322886536971155282L;
-
+	
+	@Id
 	@Column(name="dataexecucao")
 	private Date DataExecucao;
 
 	@Column(name="data")
-	private Date Data;
+	private String Data;
 	
 	@Id
 	@Column(name="hora")
 	private String Hora;
 	
+	@Id
 	@Column(name="total")
 	private int Total;
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	public Date getDataExecucao() {
 		return DataExecucao;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return Data;
 	}
 
@@ -59,7 +57,7 @@ public class ResultTotalPostagemPorHora implements Serializable {
 		DataExecucao = dataExecucao;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		Data = data;
 	}
 
@@ -70,5 +68,4 @@ public class ResultTotalPostagemPorHora implements Serializable {
 	public void setTotal(int total) {
 		Total = total;
 	}
-
 }

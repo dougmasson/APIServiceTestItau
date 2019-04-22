@@ -22,6 +22,9 @@ public class ResultExibirUsuarioMaioresSeguidos implements Serializable {
 
 	private static final long serialVersionUID = -6236359109890647011L;
 
+	@Column(name="num")
+	private int Num;
+	
 	@Column(name="dataexecucao")
 	private Date DataExecucao;
 
@@ -42,6 +45,7 @@ public class ResultExibirUsuarioMaioresSeguidos implements Serializable {
 	public String getUsuario() {
 		return Usuario;
 	}
+	
 	public void setUsuario(String usuario) {
 		Usuario = usuario;
 	}
@@ -49,7 +53,16 @@ public class ResultExibirUsuarioMaioresSeguidos implements Serializable {
 	public int getQtdSeguidores() {
 		return QtdSeguidores;
 	}
+	
 	public void setQtdSeguidores(int qtdSeguidores) {
 		QtdSeguidores = qtdSeguidores;
+	}
+	
+	public int getNum() {
+		return Num;
+	}
+	
+	public void setNum(int num) {
+		Num = num;
 	}
 } 
